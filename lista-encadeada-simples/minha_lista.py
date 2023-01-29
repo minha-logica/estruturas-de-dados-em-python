@@ -6,7 +6,7 @@ class MinhaLista:
     #INICIALIZADOR 
     def __init__(self, *args):
         self.no_raiz = No()
-        self.tamanho = 0 #self._tamanho()      
+        self.tamanho = 0     
         self._adicionar_itens(*args)
     #MÉTODOS AUXILIARES
     def _buscar_no(self, indice):
@@ -20,16 +20,8 @@ class MinhaLista:
         if len(args) != 0:
             for i in range(len(args)):
                 item = args[i]
-                self.adicionar(item)
-    
-    def _tamanho(self):
-        no = self.no_raiz
-        contador = 0
-        while no.proximo != None:
-            no = no.proximo
-            contador += 1
-        return contador 
-                            
+                self.adicionar(item)    
+                                
     #CRUD
     def adicionar(self, valor):                        
         no = self.no_raiz
