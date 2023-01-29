@@ -1,5 +1,6 @@
-class No:    
-    indice: int = -1    
+#minha_lista.py
+
+class No:        
     valor: object = None
     proximo: 'No' = None
     
@@ -7,14 +8,13 @@ class MinhaLista:
     #INICIALIZADOR 
     def __init__(self, *args):
         self.no_raiz = No()
-        self.tamanho = 0
-        
+        self.tamanho = 0 #self._tamanho()      
         self._adicionar_itens(*args)
     #MÉTODOS AUXILIARES
     def _buscar_no(self, indice):
         no = self.no_raiz.proximo
         for i in range(self.tamanho):
-            if no.indice  == indice:
+            if i  == indice:
                 return no
             no = no.proximo
         return 
@@ -23,7 +23,15 @@ class MinhaLista:
             for i in range(len(args)):
                 item = args[i]
                 self.adicionar(item)
-
+    
+    def _tamanho(self):
+        no = self.no_raiz
+        contador = 0
+        while no.proximo != None:
+            no = no.proximo
+            contador += 1
+        return contador 
+                            
     #CRUD
     def adicionar(self, valor):                        
         no = self.no_raiz
@@ -32,7 +40,6 @@ class MinhaLista:
             if no.proximo == ultimo_no:
 
                 novo_no = No()
-                novo_no.indice = self.tamanho 
                 novo_no.valor  = valor
                 
                 no.proximo = novo_no
@@ -59,17 +66,18 @@ class MinhaLista:
         return
     
     def remover(self, indice):
-        no = self.no_raiz.proximo
-        nova_lista = MinhaLista()
+        no = self.no_raiz
         for i in range(self.tamanho):
-            if no.indice != indice:
-                nova_lista.adicionar(no.valor)                                                             
-            no = no.proximo
-                
-        self.no_raiz = nova_lista.no_raiz 
-        self.tamanho -= 1
-        del nova_lista
-        return self
+            if no.proximo != None: 
+                if i == indice:          
+                    #if no.proximo.indice == indice:
+                    proximo = no.proximo                    
+                    no.proximo = proximo.proximo
+                    self.tamanho -= 1                   
+                    #del proximo
+                    return self                                                
+            no = no.proximo                                
+        return
     #MÉTODOS ESPECIAIS
     def __str__(self):
         string = "MinhaLista["                
@@ -106,5 +114,3 @@ class MinhaLista:
     
     def __setitem__(self, indice, valor):
         self.atualizar(indice, valor)
-
-
