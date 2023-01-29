@@ -1,5 +1,3 @@
-#minha_lista.py
-
 class No:        
     valor: object = None
     proximo: 'No' = None
@@ -82,6 +80,9 @@ class MinhaLista:
     def __str__(self):
         string = "MinhaLista["                
         no = self.no_raiz.proximo
+        if no == None:
+            string += "]"
+            return string
         for i in range(self.tamanho):
             valor = str(no.valor)
             string += valor
@@ -114,3 +115,4 @@ class MinhaLista:
     
     def __setitem__(self, indice, valor):
         self.atualizar(indice, valor)
+
