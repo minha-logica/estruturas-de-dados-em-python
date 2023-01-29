@@ -68,11 +68,9 @@ class MinhaLista:
         for i in range(self.tamanho):
             if no.proximo != None: 
                 if i == indice:          
-                    #if no.proximo.indice == indice:
                     proximo = no.proximo                    
                     no.proximo = proximo.proximo
                     self.tamanho -= 1                   
-                    #del proximo
                     return self                                                
             no = no.proximo                                
         return
