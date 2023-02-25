@@ -52,8 +52,15 @@ class Fila:
         if not self.esta_vazia():
             # Adiciona o novo no
             self.ultimo.proximo = novo
-        # Atualiza o atributo ultimo com o novo no
+        
+        # atualiza o atributo ultimo com o novo no
         self.ultimo = novo
+        
+        # atualiza o atributo primeiro
+        # se ainda não houver um primeiro elemento na fila
+        if self.esta_vazia():
+            self.primeiro = self.ultimo
+        
 
 ```
 
