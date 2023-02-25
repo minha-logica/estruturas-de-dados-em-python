@@ -17,7 +17,7 @@ Em nossa classe No, assim como vimos nos exemplos da Lista Ligada e da Pilha, te
 class No:
     def __init__(self, valor = None):
         self.valor: object = valor
-        self.anterior: "No" = None
+        self.proximo: "No" = None
 
 ```
 
