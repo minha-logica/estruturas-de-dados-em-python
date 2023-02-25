@@ -1,6 +1,8 @@
 # Lista Encadeada em Python
 Este repositório contém a implementação de uma lista encadeada simples em Python.
 
+Leia mais sobre em nosso post no [Twitter](https://twitter.com/minha_logica/status/1619696743205212160?t=X2U8F7PRZbtQo0Hg_W8XNg&s=19)
+
 ## Requesitos 
 Python 3.x
 
