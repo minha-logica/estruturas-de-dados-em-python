@@ -28,9 +28,9 @@ class ListaLigadaOrdenada:
         elif valor == self.primeiro.valor:
             self.primeiro = self.primeiro.proximo
         else:
-            anterior, encontrado = self._buscar_no_anterior_e_proximo(valor)
-            if encontrado != None and valor == encontrado.valor:                            
-                anterior.proximo = encontrado.proximo            	      
+            anterior, no_buscado = self._buscar_no_anterior_e_proximo(valor)
+            if no_buscado != None and valor == no_buscado.valor:                            
+                anterior.proximo = no_buscado.proximo            	      
 
     
     def esta_vazia(self):
