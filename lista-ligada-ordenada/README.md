@@ -102,7 +102,7 @@ class ListaLigadaOrdenada:
 
 A imagem abaixo ilustra a lógica que seguimos para manipular os ponteiros e inserir o novo elemento. Suponha a lista [-2, 1, 4, 6]. Vamos adicionar o elemento 3:
 
-![Alt Exemplo de inserção de itens](lista-ligada-ordenada/imagens/exemplo-inserir-itens.jpg)
+![Alt Exemplo de inserção de itens](imagens/exemplo-inserir-itens.jpg)
 
 ### Removendo itens da lista
 
